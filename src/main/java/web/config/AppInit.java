@@ -14,7 +14,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     // Добавление конфигурации, в которой инициализируем ViewResolver, для корректного отображения jsp.
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{            //у алишева Class[]
+        return new Class<?>[]{
                 WebConfig.class
         };
     }

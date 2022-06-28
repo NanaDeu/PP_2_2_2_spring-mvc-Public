@@ -17,15 +17,15 @@ public class CarController {
     public String printCars(@RequestParam(value = "count", required = false) String parameter, ModelMap model) {
 
         if (parameter == null) {
-            model.addAttribute("carsList", Car.getCarsList());
+            model.addAttribute("carsList", CarService.getCarsList());
             return "/cars";
         }
         int count = Integer.parseInt(parameter);
-        if (count >= 1 & count < Car.getCarsList().size()) {
+        if (count >= 1 & count < CarService.getCarsList().size()) {
             model.addAttribute("carsList", CarService.getThatManyCars(count));
 
-        } else if (count > Car.getCarsList().size()) {
-            model.addAttribute("carsList", Car.getCarsList());
+        } else if (count > CarService.getCarsList().size()) {
+            model.addAttribute("carsList", CarService.getCarsList());
         }
         return "/cars";
     }
